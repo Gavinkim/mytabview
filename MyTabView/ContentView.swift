@@ -1,16 +1,27 @@
-//
-//  ContentView.swift
-//  MyTabView
-//
-//  Created by Gavin on 2020/08/07.
-//  Copyright © 2020 Gavin. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            MyView(title: "Air", bgColor: Color.red)
+                .tabItem {
+                    Image(systemName: "airplane")
+                    Text("air")
+            }.tag(0)
+            
+            MyView(title: "flame", bgColor: Color.yellow)
+                .tabItem {
+                    Image(systemName: "flame.fill")
+                    Text("flame")
+            }.tag(1)
+            
+            MyView(title: "doc", bgColor: Color.green)
+                .tabItem {
+                    Image(systemName: "doc.fill")
+                    Text("doc")
+            }.tag(2)
+            
+        }
     }
 }
 
